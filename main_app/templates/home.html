@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+   <h1>Wish List Items</h1>
+
+   {% if item_list|length == 0 %}
+   <h3>No Wish Items Exist</h3>
+   <hr>
+   <button><a href="{% url 'add' %}">Add A Wish Item</a></button>
+   
+  
+{% else %}
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Delete</th>
+        </tr>
+        <tr>
+            <td>{{form.description}}</td>
+            <td>{{form.delete}}</td>
+        </tr>
+    </thead>
+</table>
+
+{% endif %}
+  
+
+  {% endblock %}  
+
